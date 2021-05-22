@@ -4,7 +4,7 @@
   "description": "\"An API Library which fetches data from Bombay Stock Exchange and National Stock Exchange and returns data in JSON format.\"",
   "main": "app.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,7 +30,8 @@
   },
   "homepage": "https://github.com/maanavshah/stock-market-india#readme",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "loadash": "^1.0.0"
   }

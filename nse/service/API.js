@@ -1,25 +1,25 @@
-var axios = require('axios');
+const axios = require('axios');
+const convert = require('xml-js');
+const csv2Json = require('../../utils/csv2Json');
 
-var csv2Json = require('../../utils/csv2Json');
-
-var MARKET_STATUS_URL = require('../constant').MARKET_STATUS_URL;
-var INDICES_WATCH_URL = require('../constant').INDICES_WATCH_URL;
-var SECTORS_LIST = require('../constant').SECTORS_LIST;
-var QUOTE_INFO_URL = require('../constant').QUOTE_INFO_URL;
-var GET_QUOTE_URL = require('../constant').GET_QUOTE_URL;
-var GAINERS_URL = require('../constant').GAINERS_URL;
-var LOSERS_URL = require('../constant').LOSERS_URL;
-var ADVANCES_DECLINES_URL = require('../constant').ADVANCES_DECLINES_URL;
-var INDEX_STOCKS_URL = require('../constant').INDEX_STOCKS_URL;
-var INTRADAY_URL = require('../constant').INTRADAY_URL;
-var INDEX_CHARTDATA_URL = require('../constant').INDEX_CHARTDATA_URL;
-var SEARCH_URL = require('../constant').SEARCH_URL;
-var STOCK_OPTIONS_URL = require('../constant').STOCK_OPTIONS_URL;
-var YEAR_HIGH_URL = require('../constant').YEAR_HIGH_URL;
-var YEAR_LOW_URL = require('../constant').YEAR_LOW_URL;
-var TOP_VALUE_URL = require('../constant').TOP_VALUE_URL;
-var TOP_VOLUME_URL = require('../constant').TOP_VOLUME_URL;
-var NEW_CHART_DATA_URL = require('../constant').NEW_CHART_DATA_URL;
+const MARKET_STATUS_URL = require('../constant').MARKET_STATUS_URL;
+const INDICES_WATCH_URL = require('../constant').INDICES_WATCH_URL;
+const SECTORS_LIST = require('../constant').SECTORS_LIST;
+const QUOTE_INFO_URL = require('../constant').QUOTE_INFO_URL;
+const GET_QUOTE_URL = require('../constant').GET_QUOTE_URL;
+const GAINERS_URL = require('../constant').GAINERS_URL;
+const LOSERS_URL = require('../constant').LOSERS_URL;
+const ADVANCES_DECLINES_URL = require('../constant').ADVANCES_DECLINES_URL;
+const INDEX_STOCKS_URL = require('../constant').INDEX_STOCKS_URL;
+const INTRADAY_URL = require('../constant').INTRADAY_URL;
+const INDEX_CHARTDATA_URL = require('../constant').INDEX_CHARTDATA_URL;
+const SEARCH_URL = require('../constant').SEARCH_URL;
+const STOCK_OPTIONS_URL = require('../constant').STOCK_OPTIONS_URL;
+const YEAR_HIGH_URL = require('../constant').YEAR_HIGH_URL;
+const YEAR_LOW_URL = require('../constant').YEAR_LOW_URL;
+const TOP_VALUE_URL = require('../constant').TOP_VALUE_URL;
+const TOP_VOLUME_URL = require('../constant').TOP_VOLUME_URL;
+const NEW_CHART_DATA_URL = require('../constant').NEW_CHART_DATA_URL;
 
 function getTime(periodType, time) {
   if (periodType === 1) {
